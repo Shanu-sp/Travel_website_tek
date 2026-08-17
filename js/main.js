@@ -20,8 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalCloseBtn = document.getElementById('modalCloseBtn');
   const bookingForm = document.getElementById('bookingForm');
   const destinationSelect = document.getElementById('travelDestination');
+  const travelDateInput = document.getElementById('travelDate');
   const openBookingBtns = document.querySelectorAll('.open-booking');
   const toastNotification = document.getElementById('toastNotification');
+
+  // Set minimum date for booking input to today
+  if (travelDateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    travelDateInput.min = today;
+  }
 
   // --------------------------------------------------------------------------
   // 2. MOBILE NAVIGATION DRAWER

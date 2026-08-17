@@ -66,9 +66,29 @@ No horizontal scrollbars, clean readable typography, and fluid touch-friendly in
 
 ---
 
-## 📋 Assignment Submission Info
+## 📋 Official Assignment Submission Details
 
-- **Candidate Name:** Sreejith K
-- **Project Name:** Wanderly Travel Homepage
-- **Assignment:** Teknoppy Junior Web Developer Technical Assignment
-- **Repository:** [https://github.com/Shanu-sp/Travel_website_tek](https://github.com/Shanu-sp/Travel_website_tek)
+| Field | Value |
+| :--- | :--- |
+| **Candidate Name:** | Sreejith K |
+| **Chosen Technology:** | HTML / CSS / JS (Option B) |
+| **GitHub Repository:** | [https://github.com/Shanu-sp/Travel_website_tek](https://github.com/Shanu-sp/Travel_website_tek) |
+| **Live Deployment URL:** | `https://shanu-sp.github.io/Travel_website_tek/` *(or Vercel / Netlify)* |
+| **AI Tools Used:** | Antigravity AI, Claude, Google Gemini |
+| **Approx. Time Taken:** | 3.5 Hours |
+
+---
+
+## 🌐 1-Click Deployment Instructions
+
+### Deploy to GitHub Pages (Free & Instant)
+1. Go to your GitHub repository: `https://github.com/Shanu-sp/Travel_website_tek`
+2. Click **Settings** > **Pages** (in the left sidebar).
+3. Under **Branch**, select `main` and `/ (root)` folder, then click **Save**.
+4. Your website will be live at: `https://shanu-sp.github.io/Travel_website_tek/`
+
+### Deploy to Netlify / Vercel
+1. Sign in to [Netlify](https://app.netlify.com) or [Vercel](https://vercel.com).
+2. Click **Add New Site** > **Import an existing project** > connect GitHub.
+3. Select `Travel_website_tek` repository and click **Deploy** (zero build step needed!).
+
