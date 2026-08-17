@@ -119,15 +119,28 @@ document.addEventListener('DOMContentLoaded', () => {
   // Form Elements
   const bookingForm = document.getElementById('bookingForm');
   const destinationSelect = document.getElementById('travelDestination');
-  const travelDateInput = document.getElementById('travelDate');
+  const travelDepartureDate = document.getElementById('travelDepartureDate');
+  const travelReturnDate = document.getElementById('travelReturnDate');
   const openSpotlightBtns = document.querySelectorAll('.open-spotlight');
   const openPlannerBtns = document.querySelectorAll('.open-planner');
   const toastNotification = document.getElementById('toastNotification');
 
-  // Set minimum date constraint for travel date to today
-  if (travelDateInput) {
-    const today = new Date().toISOString().split('T')[0];
-    travelDateInput.min = today;
+  // Set minimum date constraints for Departure & Return Dates
+  const today = new Date().toISOString().split('T')[0];
+  if (travelDepartureDate) {
+    travelDepartureDate.min = today;
+    travelDepartureDate.addEventListener('change', () => {
+      if (travelReturnDate) {
+        travelReturnDate.min = travelDepartureDate.value || today;
+        if (travelReturnDate.value && travelReturnDate.value < travelDepartureDate.value) {
+          travelReturnDate.value = travelDepartureDate.value;
+        }
+      }
+    });
+  }
+
+  if (travelReturnDate) {
+    travelReturnDate.min = today;
   }
 
   // --------------------------------------------------------------------------
@@ -166,6 +179,50 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navMenu && !navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
       closeMobileMenu();
     }
+  });
+
+  // --------------------------------------------------------------------------
+  // 3.1 PRECISE HEADER-AWARE SMOOTH SCROLLING
+  // --------------------------------------------------------------------------
+  const internalNavLinks = document.querySelectorAll('a[href^="#"]');
+
+  internalNavLinks.forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+      const targetHref = anchor.getAttribute('href');
+      if (!targetHref || targetHref === '#') return;
+
+      if (targetHref === '#home') {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+        closeMobileMenu();
+        if (window.history && window.history.pushState) {
+          window.history.pushState(null, null, '#home');
+        }
+        return;
+      }
+
+      const targetSection = document.querySelector(targetHref);
+      if (targetSection) {
+        e.preventDefault();
+        const headerHeight = header ? header.offsetHeight : 76;
+        const targetRect = targetSection.getBoundingClientRect();
+        // Align section top boundary directly below sticky header without bleeding prior section
+        const scrollPosition = targetRect.top + window.pageYOffset - headerHeight;
+
+        window.scrollTo({
+          top: Math.max(0, Math.round(scrollPosition)),
+          behavior: 'smooth'
+        });
+
+        closeMobileMenu();
+        if (window.history && window.history.pushState) {
+          window.history.pushState(null, null, targetHref);
+        }
+      }
+    });
   });
 
   // --------------------------------------------------------------------------
@@ -398,6 +455,8 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       closeModal();
       bookingForm.reset();
+      if (travelDepartureDate) travelDepartureDate.min = today;
+      if (travelReturnDate) travelReturnDate.min = today;
       showToast();
     });
   }

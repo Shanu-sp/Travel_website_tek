@@ -52,7 +52,8 @@
    - **Clicking "Plan Your Trip" / "Book Package":** Opens the **Trip Planner** tab directly with the selected package/destination pre-populated in the dropdown.
    - **One-Click Tab Switcher:** Users can seamlessly toggle between reading destination details and requesting a quote.
 2. **Client-Side Form Validation & Toast Notification:**
-   - Date picker enforces minimum date to today (`min = today`).
+   - **Synchronized Date Range Validation**: Both Departure Date and Return Date enforce `min = today`, and changing Departure Date dynamically sets `ReturnDate.min = DepartureDate.value`.
+   - Complete travel inquiry dataset with Phone/WhatsApp and special preferences fields.
    - Clean animated toast notification on inquiry submission.
 3. **Mobile Drawer Navigation:**
    - Smooth animated drawer menu on mobile viewports with auto-close on link click or exterior tap.
