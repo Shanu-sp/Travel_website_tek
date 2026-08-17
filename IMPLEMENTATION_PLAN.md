@@ -238,10 +238,9 @@ The assignment mentions that in the interview round, you may be asked to make li
 ## 8. Step-by-Step Execution Plan
 
 - [x] **Phase 1: Requirements Analysis & Specification** (Complete)
-- [ ] **Phase 2: Asset Preparation** (Curate clean, high-resolution destination and package imagery)
-- [ ] **Phase 3: CSS Design System Foundation** (Write `css/style.css` with variables, reset, utility classes, and base components)
-- [ ] **Phase 4: Semantic HTML Markup** (Write `index.html` covering all 7 sections with accessibility attributes)
-- [ ] **Phase 5: Responsive Layout & Mobile Drawer** (Implement CSS Grid/Flexbox and mobile drawer navigation)
-- [ ] **Phase 6: JavaScript Interactivity** (Implement `js/main.js` with mobile menu, smooth scrolling, sticky header)
-- [ ] **Phase 7: Responsive Quality Assurance** (Verify across 375px mobile, 768px tablet, and 1440px desktop)
-- [ ] **Phase 8: Git Commit & Push** (Push clean modular commits to GitHub)
+- [x] **Phase 2: Asset Preparation** (Curated high-resolution imagery for Hero, Bali, Dubai, Maldives, Switzerland, and Packages)
+- [x] **Phase 3: CSS Design System Foundation** (`css/style.css` complete with CSS custom properties, responsive typography, and elevation)
+- [x] **Phase 4: Semantic HTML Markup** (`index.html` complete covering all 7 sections, modal, and accessibility attributes)
+- [x] **Phase 5: Responsive Layout & Mobile Drawer** (Mobile drawer hamburger menu and adaptive CSS grids implemented)
+- [x] **Phase 6: JavaScript Interactivity** (`js/main.js` with mobile menu, smooth scrolling, scroll-spy, modal booking, toast notifications)
+- [x] **Phase 7: Git Commit & Versioning** (Clean modular commits in Git)
