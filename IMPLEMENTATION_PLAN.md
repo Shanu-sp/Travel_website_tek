@@ -204,20 +204,59 @@ Travel_website_tek/
 
 ---
 
-## 6. JavaScript Architecture (Lightweight & Clean)
+## 6. JavaScript Architecture: Smart Contextual Modal
 
-`js/main.js` will contain strictly organized, pure vanilla functions:
-1. **Mobile Menu Drawer Toggle:**
-   - Listens to click on `#mobileToggle`.
-   - Toggles `.is-active` class on `#navMenu` and `#mobileToggle`.
-   - Sets `aria-expanded="true/false"` for accessibility.
-   - Closes automatically when clicking a nav link or clicking outside the menu.
-2. **Sticky Header Dynamic State:**
-   - Adds `.scrolled` class on `window.scrollY > 40` to add shadow and background blur.
-3. **Smooth Scroll Behavior:**
-   - Native CSS `scroll-behavior: smooth;` supplemented with offset handling for sticky header.
-4. **Interactive Trip Plan Trigger (Modal or Notification):**
-   - When clicking any "Plan Your Trip" or "Book Package" button, smoothly opens a clean booking/inquiry modal with simple inputs (Name, Destination, Travel Dates, Travelers) for realistic interactivity without any backend requirement.
+The modal component operates in two intelligent contextual modes based on user intent:
+
+```text
+                     ┌─────────────────────────────┐
+                     │     User Action on Page     │
+                     └──────────────┬──────────────┘
+                                    │
+               ┌────────────────────┴────────────────────┐
+               ▼                                         ▼
+   [ Click "Explore Details" ]               [ Click "Book Package" / "Plan Trip" ]
+               │                                         │
+               ▼                                         ▼
+   ┌───────────────────────┐                 ┌───────────────────────┐
+   │ TAB 1: SPOTLIGHT VIEW │                 │ TAB 2: TRIP PLANNER   │
+   │ • High-res hero photo │                 │ • Pre-selected Dest   │
+   │ • Quick Facts Grid    │  ──────────────►│ • Travel Date Picker  │
+   │ • Top 3 Attractions   │  (One-click tab │ • Guests & Style      │
+   │ • Starting Price      │   or button)    │ • Instant Quote Req   │
+   └───────────────────────┘                 └───────────────────────┘
+```
+
+### 6.1 Data Model (`destinationsData` dictionary in `js/main.js`)
+```javascript
+const destinationsData = {
+  bali: {
+    name: 'Bali, Indonesia',
+    badge: 'Tropical Culture',
+    rating: '4.9/5 (140+ reviews)',
+    image: 'assets/images/destinations/bali.jpg',
+    bestSeason: 'April – October',
+    idealStay: '5 – 7 Days',
+    currency: 'Indonesian Rupiah (IDR)',
+    price: '$799',
+    description: 'Immerse yourself in lush emerald rice terraces, sacred ancient cliffside temples, world-class surfing beaches, and tranquil wellness retreats.',
+    highlights: [
+      'Ubud Monkey Forest & Tegalalang Rice Terraces',
+      'Uluwatu Sunset Temple & Kecak Fire Dance',
+      'Mount Batur Sunrise Trekking & Hot Springs'
+    ]
+  },
+  dubai: { /* Dubai facts, attractions & pricing */ },
+  maldives: { /* Maldives facts, attractions & pricing */ },
+  switzerland: { /* Swiss Alps facts, attractions & pricing */ }
+};
+```
+
+### 6.2 Key Modal Functions
+1. `openSpotlightModal(destKey)`: Populates destination imagery, rating, quick facts, and attractions list; activates Tab 1 ("Destination Overview") and pre-selects the destination in the form dropdown.
+2. `openPlannerModal(destKey, packageTitle)`: Activates Tab 2 ("Plan & Book Trip") directly, pre-fills the destination and package name.
+3. `switchModalTab(tabName)`: Handles smooth animated transitions between Spotlight Overview and Trip Planner tabs.
+4. `handleBookingSubmit(e)`: Validates form, prevents past dates (`travelDate.min = today`), shows animated toast feedback, and resets cleanly.
 
 ---
 
@@ -229,7 +268,7 @@ The assignment mentions that in the interview round, you may be asked to make li
 | :--- | :--- |
 | **1. "Change the Hero CTA text or link"** | Open `index.html` -> find `<section class="hero-section">` -> modify the text inside `<a class="btn btn-accent">` in 5 seconds. |
 | **2. "Add a Destination Dropdown"** | In `index.html` inside the hero or header, insert a pre-styled `<select class="custom-select">` with destination options. |
-| **3. "Add a 5th destination card"** | Duplicate one `<article class="destination-card">` in `index.html`. The CSS Grid auto-fits automatically without breaking the layout. |
+| **3. "Add a 5th destination (e.g. Tokyo / Paris)"** | 1. Add 1 object to `destinationsData` in `js/main.js`.<br>2. Add 1 `<article class="destination-card">` in `index.html`. Grid automatically fits it without CSS changes. |
 | **4. "Fix or adjust mobile navigation"** | Open `css/style.css` -> find the dedicated `@media (max-width: 768px)` block clearly labeled `/* ===== MOBILE NAVIGATION ===== */`. |
 | **5. "Change the theme accent color"** | In `css/style.css` -> change `--color-accent: #ff6b4a;` to any color and it updates across all buttons, highlights, and badges instantly. |
 
@@ -238,9 +277,10 @@ The assignment mentions that in the interview round, you may be asked to make li
 ## 8. Step-by-Step Execution Plan
 
 - [x] **Phase 1: Requirements Analysis & Specification** (Complete)
-- [x] **Phase 2: Asset Preparation** (Curated high-resolution imagery for Hero, Bali, Dubai, Maldives, Switzerland, and Packages)
-- [x] **Phase 3: CSS Design System Foundation** (`css/style.css` complete with CSS custom properties, responsive typography, and elevation)
-- [x] **Phase 4: Semantic HTML Markup** (`index.html` complete covering all 7 sections, modal, and accessibility attributes)
-- [x] **Phase 5: Responsive Layout & Mobile Drawer** (Mobile drawer hamburger menu and adaptive CSS grids implemented)
-- [x] **Phase 6: JavaScript Interactivity** (`js/main.js` with mobile menu, smooth scrolling, scroll-spy, modal booking, toast notifications)
-- [x] **Phase 7: Git Commit & Versioning** (Clean modular commits in Git)
+- [x] **Phase 2: Asset Preparation** (High-resolution imagery organized)
+- [x] **Phase 3: CSS Design System Foundation** (Responsive tokens and grid layout)
+- [x] **Phase 4: Semantic HTML Markup** (All 7 homepage sections implemented)
+- [x] **Phase 5: Responsive Layout & Mobile Drawer** (Complete mobile navigation drawer)
+- [x] **Phase 6: Initial JavaScript Interactivity** (Mobile menu, scroll spy, toast)
+- [ ] **Phase 7: Smart Contextual Modal Enhancement** (Upgrade modal to 2-in-1 Destination Spotlight & Trip Planner with dynamic data mapping)
+- [ ] **Phase 8: Cross-Device Testing & Git Commit** (Validate responsive modal & push to GitHub)

@@ -969,18 +969,18 @@ ul, ol {
 }
 
 /* --------------------------------------------------------------------------
-   12. INTERACTIVE MODAL (PLAN YOUR TRIP)
+   12. SMART CONTEXTUAL MODAL (SPOTLIGHT & TRIP PLANNER)
    -------------------------------------------------------------------------- */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(15, 23, 42, 0.65);
+  background-color: rgba(15, 23, 42, 0.7);
   backdrop-filter: blur(6px);
   z-index: 2000;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
+  padding: 1.25rem;
   opacity: 0;
   visibility: hidden;
   transition: opacity var(--transition-normal), visibility var(--transition-normal);
@@ -995,12 +995,30 @@ ul, ol {
   background-color: var(--color-surface);
   border-radius: var(--radius-lg);
   width: 100%;
-  max-width: 540px;
+  max-width: 560px;
   box-shadow: var(--shadow-lg);
-  padding: 2.25rem;
+  padding: 2rem;
   position: relative;
   transform: scale(0.95) translateY(15px);
   transition: transform var(--transition-smooth);
+}
+
+.spotlight-modal-container {
+  max-width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+  padding: 1.75rem 2rem 2.25rem;
+}
+
+.spotlight-modal-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.spotlight-modal-container::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: var(--radius-pill);
 }
 
 .modal-overlay.is-active .modal-container {
@@ -1019,28 +1037,235 @@ ul, ol {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color var(--transition-fast), color var(--transition-fast);
+  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+  z-index: 10;
+  border: 1px solid var(--color-border);
 }
 
 .modal-close-btn:hover {
   background-color: #fee2e2;
   color: #ef4444;
+  transform: rotate(90deg);
 }
 
+/* Modal Tabs */
+.modal-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1.5px solid var(--color-border);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.6rem;
+  padding-right: 2.5rem;
+}
+
+.modal-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+.modal-tab-btn:hover {
+  color: var(--color-primary);
+  background-color: rgba(15, 76, 129, 0.06);
+}
+
+.modal-tab-btn.active {
+  color: var(--color-primary);
+  background-color: rgba(15, 76, 129, 0.1);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Tab Panels */
+.modal-tab-panel {
+  display: none;
+}
+
+.modal-tab-panel.active {
+  display: block;
+  animation: modalTabFade 0.25s ease-out;
+}
+
+@keyframes modalTabFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Spotlight View Styles */
+.spotlight-hero {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.spotlight-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.spotlight-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.3) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.25rem;
+  color: #ffffff;
+}
+
+.spotlight-tag {
+  background-color: var(--color-accent);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-pill);
+  width: fit-content;
+  margin-bottom: 0.35rem;
+}
+
+.spotlight-title {
+  font-size: 1.45rem;
+  font-weight: var(--font-weight-extrabold);
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+  line-height: 1.2;
+}
+
+.spotlight-rating {
+  font-size: 0.825rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: var(--font-weight-medium);
+}
+
+.spotlight-desc {
+  font-size: 0.925rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.spotlight-facts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.fact-card {
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.fact-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.fact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.fact-label {
+  font-size: 0.72rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.fact-val {
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-main);
+}
+
+.fact-price {
+  color: var(--color-accent);
+}
+
+.spotlight-highlights-wrap {
+  background-color: var(--color-surface-alt);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  padding: 1.15rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.spotlight-section-heading {
+  font-size: 0.95rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-main);
+  margin-bottom: 0.75rem;
+}
+
+.spotlight-highlights-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.spotlight-highlights-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.875rem;
+  color: var(--color-text-main);
+  line-height: 1.4;
+}
+
+.spotlight-highlights-list li svg {
+  color: var(--color-secondary);
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+/* Modal Form Styles */
 .modal-header {
   margin-bottom: 1.5rem;
 }
 
 .modal-title {
-  font-size: 1.6rem;
+  font-size: 1.45rem;
   font-weight: var(--font-weight-bold);
   color: var(--color-text-main);
   margin-bottom: 0.35rem;
 }
 
 .modal-subtitle {
-  font-size: 0.925rem;
+  font-size: 0.9rem;
   color: var(--color-text-muted);
+  line-height: 1.5;
 }
 
 .booking-form {
@@ -1069,11 +1294,13 @@ ul, ol {
   background-color: #ffffff;
   color: var(--color-text-main);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  font-family: inherit;
 }
 
 .form-control:focus {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(15, 76, 129, 0.15);
+  outline: none;
 }
 
 .form-row {
