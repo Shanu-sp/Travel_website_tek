@@ -1075,15 +1075,13 @@ body.modal-open {
 }
 
 .spotlight-modal-container {
-  max-width: 620px;
-  max-height: 85vh;
-  max-height: 85dvh;
+  max-width: 640px;
+  max-height: 90vh;
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-width: thin;
   scrollbar-color: var(--color-border) transparent;
   padding: 1.75rem 2rem 2.25rem;
-  margin: auto;
 }
 
 .spotlight-modal-container::-webkit-scrollbar {
@@ -1495,16 +1493,12 @@ body.modal-open {
   }
 
   .modal-overlay {
-    padding: 1.25rem 1rem;
+    padding: 0.85rem;
   }
 
   .spotlight-modal-container {
-    max-width: 520px;
-    max-height: 82vh;
-    max-height: 82dvh;
-    padding: 1.4rem 1.35rem 1.6rem;
-    border-radius: 16px;
-    margin: auto;
+    padding: 1.5rem 1.4rem 1.85rem;
+    max-height: 92vh;
   }
 }
 
@@ -1534,41 +1528,35 @@ body.modal-open {
   }
 
   .modal-overlay {
-    padding: 1.25rem 0.85rem;
+    padding: 0.5rem;
   }
 
   .modal-container {
-    padding: 1.25rem 1rem;
-    border-radius: 16px;
+    padding: 1.25rem 0.9rem;
+    border-radius: var(--radius-md);
     max-width: 100%;
-    margin: auto;
   }
 
   .spotlight-modal-container {
-    max-width: 100%;
-    max-height: 80vh;
-    max-height: 80dvh;
-    padding: 1.15rem 1rem 1.35rem;
-    border-radius: 16px;
-    margin: auto;
+    padding: 1.15rem 0.85rem 1.35rem;
+    max-height: 94vh;
   }
 
   .modal-close-btn {
     top: 0.65rem;
     right: 0.65rem;
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
   }
 
   .modal-tabs {
-    padding-right: 2.25rem;
+    padding-right: 2rem;
     gap: 0.35rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
+    margin-bottom: 1.15rem;
   }
 
   .modal-tab-btn {
-    padding: 0.45rem 0.65rem;
+    padding: 0.45rem 0.6rem;
     font-size: 0.8rem;
     gap: 0.3rem;
   }
@@ -1579,9 +1567,8 @@ body.modal-open {
   }
 
   .spotlight-hero {
-    height: 145px;
-    margin-bottom: 0.9rem;
-    border-radius: var(--radius-sm);
+    height: 160px;
+    margin-bottom: 1rem;
   }
 
   .spotlight-hero-overlay {
@@ -1597,19 +1584,17 @@ body.modal-open {
   }
 
   .spotlight-desc {
-    font-size: 0.85rem;
-    line-height: 1.5;
-    margin-bottom: 0.85rem;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
   }
 
   .spotlight-facts-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.45rem;
-    margin-bottom: 0.85rem;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
   }
 
   .fact-card {
-    padding: 0.45rem 0.55rem;
+    padding: 0.5rem 0.55rem;
     gap: 0.4rem;
     min-width: 0;
   }
@@ -1627,46 +1612,33 @@ body.modal-open {
   }
 
   .spotlight-highlights-wrap {
-    padding: 0.8rem 0.85rem;
-    margin-bottom: 1rem;
-    border-radius: var(--radius-sm);
+    padding: 0.85rem 0.8rem;
+    margin-bottom: 1.15rem;
   }
 
   .spotlight-section-heading {
-    font-size: 0.85rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    margin-bottom: 0.6rem;
   }
 
   .spotlight-highlights-list {
-    gap: 0.45rem;
+    gap: 0.5rem;
   }
 
   .spotlight-highlights-list li {
-    font-size: 0.8rem;
-    line-height: 1.35;
+    font-size: 0.82rem;
     gap: 0.45rem;
     word-break: break-word;
   }
 
-  .spotlight-actions .btn,
   .btn-lg {
     padding: 0.75rem 1.25rem;
-    font-size: 0.92rem;
+    font-size: 0.95rem;
   }
 }
 
 /* Extra Small Devices (Max 360px) */
 @media (max-width: 360px) {
-  .modal-overlay {
-    padding: 1rem 0.65rem;
-  }
-
-  .spotlight-modal-container {
-    max-height: 80vh;
-    max-height: 80dvh;
-    padding: 1rem 0.85rem 1.25rem;
-  }
-
   .modal-tabs {
     flex-direction: column;
     align-items: stretch;
