@@ -971,11 +971,16 @@ ul, ol {
 /* --------------------------------------------------------------------------
    12. SMART CONTEXTUAL MODAL (SPOTLIGHT & TRIP PLANNER)
    -------------------------------------------------------------------------- */
+body.modal-open {
+  overflow: hidden;
+}
+
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(15, 23, 42, 0.7);
+  background-color: rgba(15, 23, 42, 0.72);
   backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   z-index: 2000;
   display: flex;
   align-items: center;
@@ -984,6 +989,7 @@ ul, ol {
   opacity: 0;
   visibility: hidden;
   transition: opacity var(--transition-normal), visibility var(--transition-normal);
+  overscroll-behavior: contain;
 }
 
 .modal-overlay.is-active {
@@ -999,8 +1005,10 @@ ul, ol {
   box-shadow: var(--shadow-lg);
   padding: 2rem;
   position: relative;
-  transform: scale(0.95) translateY(15px);
-  transition: transform var(--transition-smooth);
+  opacity: 0;
+  transform: scale(0.96) translateY(12px);
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+  will-change: transform, opacity;
 }
 
 .spotlight-modal-container {
@@ -1022,6 +1030,7 @@ ul, ol {
 }
 
 .modal-overlay.is-active .modal-container {
+  opacity: 1;
   transform: scale(1) translateY(0);
 }
 
@@ -1092,17 +1101,15 @@ ul, ol {
 
 .modal-tab-panel.active {
   display: block;
-  animation: modalTabFade 0.25s ease-out;
+  animation: modalTabFade 0.2s ease-in-out;
 }
 
 @keyframes modalTabFade {
   from {
     opacity: 0;
-    transform: translateY(6px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -1111,6 +1118,7 @@ ul, ol {
   position: relative;
   width: 100%;
   height: 200px;
+  flex-shrink: 0;
   border-radius: var(--radius-md);
   overflow: hidden;
   margin-bottom: 1.25rem;

@@ -304,16 +304,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const showModal = () => {
     if (!bookingModal) return;
+    
+    // Prevent layout shift from scrollbar disappearing
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+      if (header) header.style.paddingRight = `${scrollbarWidth}px`;
+    }
+    
+    document.body.classList.add('modal-open');
     bookingModal.classList.add('is-active');
     bookingModal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
   };
 
   const closeModal = () => {
     if (!bookingModal) return;
     bookingModal.classList.remove('is-active');
     bookingModal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
+    
+    // Restore layout after animation completes
+    setTimeout(() => {
+      document.body.classList.remove('modal-open');
+      document.body.style.paddingRight = '';
+      if (header) header.style.paddingRight = '';
+    }, 280);
   };
 
   // Tab button click listeners
