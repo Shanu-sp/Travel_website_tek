@@ -78,7 +78,7 @@ No horizontal scrollbars, clean readable typography, and fluid touch-friendly in
 | **Candidate Name:**      | Sreejith K                                                                                       |
 | **Chosen Technology:**   | HTML / CSS / JS (Option B)                                                                       |
 | **GitHub Repository:**   | [https://github.com/Shanu-sp/Travel_website_tek](https://github.com/Shanu-sp/Travel_website_tek) |
-| **Live Deployment URL:** | `https://shanu-sp.github.io/Travel_website_tek/` _(or Vercel / Netlify)_                         |
+| **Live Deployment URL:** | [https://wanderly-travels-for-you.vercel.app](https://wanderly-travels-for-you.vercel.app)       |
 | **AI Tools Used:**       | Antigravity AI, Claude, Google Gemini                                                            |
 | **Approx. Time Taken:**  | 3.5 Hours                                                                                        |
 
