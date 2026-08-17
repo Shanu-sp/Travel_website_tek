@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       season: 'April – October (Dry Season)',
       duration: '5 – 7 Days',
       currency: 'IDR (Indonesian Rupiah)',
-      price: 'From $799 / person',
+      price: 'From ₹65,999 / person',
       description: 'Immerse yourself in lush emerald rice terraces, sacred ancient cliffside temples, world-class surfing beaches, and tranquil wellness retreats.',
       highlights: [
         'Ubud Sacred Monkey Forest & Tegalalang Rice Terraces',
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
       season: 'November – March (Pleasant)',
       duration: '4 – 6 Days',
       currency: 'AED (Emirati Dirham)',
-      price: 'From $1,099 / person',
+      price: 'From ₹89,999 / person',
       description: 'Experience iconic futuristic architecture, world-class luxury shopping, and golden desert safaris where traditional Arabian heritage meets modern luxury.',
       highlights: [
         'Burj Khalifa 124th Floor Skydeck & Dubai Fountain Show',
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
       season: 'December – April (Calm Waters)',
       duration: '5 – 8 Days',
       currency: 'USD / MVR (Rufiyaa)',
-      price: 'From $1,899 / person',
+      price: 'From ₹1,55,999 / person',
       description: 'Relax in crystal clear turquoise waters, pristine overwater villas, and vibrant coral reef sanctuaries in an intimate tropical paradise.',
       highlights: [
         'Private Overwater Villa Stay with Direct Lagoon Access',
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
       season: 'June – Sept (Summer) / Dec – Mar (Ski)',
       duration: '6 – 8 Days',
       currency: 'CHF (Swiss Franc)',
-      price: 'From $1,499 / person',
+      price: 'From ₹1,24,999 / person',
       description: 'Discover majestic snowcapped Alpine peaks, mirror-like glacial lakes, scenic mountain railways, and charming traditional Swiss chalets.',
       highlights: [
         'Panoramic Glacier Express Train across the Swiss Alps',
