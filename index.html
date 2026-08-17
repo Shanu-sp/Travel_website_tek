@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wanderly &mdash; Discover More. Travel Further.</title>
+  <meta name="description" content="Explore world-class destinations and curated travel packages with Wanderly. Best travel deals, handpicked destinations, and 24/7 expert travel support.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       SECTION 01: HEADER & NAVIGATION
+       ========================================================================= -->
+  <header class="site-header" id="header">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="#home" class="brand-logo" aria-label="Wanderly Travel Home">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+        </svg>
+        <span>Wanderly</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="navMenu" aria-label="Main Navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#destinations" class="nav-link">Destinations</a>
+        <a href="#packages" class="nav-link">Packages</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Action Button & Mobile Hamburger -->
+      <div class="nav-actions">
+        <button class="btn btn-primary nav-cta" id="navPlanTripBtn">Plan Your Trip</button>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================================================================
+         SECTION 02: HERO SECTION
+         ========================================================================= -->
+    <section class="hero-section" id="home">
+      <div class="hero-overlay"></div>
+      <div class="container hero-container">
+        <div class="hero-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          <span>Premium Curated Travel Experiences</span>
+        </div>
+        <h1 class="hero-title">Explore the World, Your Way</h1>
+        <p class="hero-subtitle">
+          Discover handpicked destinations, bespoke itineraries, and unforgettable adventures tailored to your unique travel dreams.
+        </p>
+        <div class="hero-actions">
+          <a href="#destinations" class="btn btn-accent btn-lg">Explore Destinations</a>
+          <a href="#packages" class="btn btn-outline-light btn-lg">View Packages</a>
+        </div>
+
+        <div class="hero-highlights">
+          <div class="highlight-item">
+            <span class="highlight-number">50+</span>
+            <span class="highlight-label">Exotic Destinations</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-number">12,000+</span>
+            <span class="highlight-label">Happy Travelers</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-number">99.4%</span>
+            <span class="highlight-label">Satisfaction Rate</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 03: POPULAR DESTINATIONS (4 CARDS)
+         ========================================================================= -->
+    <section class="destinations-section section-padding" id="destinations">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Top Getaways</span>
+          <h2 class="section-title">Popular Destinations</h2>
+          <p class="section-subtitle">
+            From tropical beaches and serene mountain peaks to futuristic cities, explore our top traveler-favorite spots worldwide.
+          </p>
+        </div>
+
+        <div class="destinations-grid">
+          <!-- Destination Card 1: Bali -->
+          <article class="destination-card">
+            <div class="card-img-wrapper">
+              <img src="assets/images/destinations/bali.jpg" alt="Bali rice terraces and tropical palms" loading="lazy">
+              <span class="card-badge">⭐ 4.9 (1.4k)</span>
+            </div>
+            <div class="card-body">
+              <span class="card-location">Indonesia</span>
+              <h3 class="card-title">Bali</h3>
+              <p class="card-desc">
+                Immerse yourself in lush emerald rice terraces, sacred temples, and tranquil tropical beaches.
+              </p>
+              <div class="card-footer">
+                <button class="btn-card open-booking" data-destination="Bali, Indonesia">
+                  Explore Details &rarr;
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Destination Card 2: Dubai -->
+          <article class="destination-card">
+            <div class="card-img-wrapper">
+              <img src="assets/images/destinations/dubai.jpg" alt="Dubai luxury skyline and marina at sunset" loading="lazy">
+              <span class="card-badge">⭐ 4.8 (2.1k)</span>
+            </div>
+            <div class="card-body">
+              <span class="card-location">United Arab Emirates</span>
+              <h3 class="card-title">Dubai</h3>
+              <p class="card-desc">
+                Experience iconic futuristic architecture, world-class luxury shopping, and golden desert safaris.
+              </p>
+              <div class="card-footer">
+                <button class="btn-card open-booking" data-destination="Dubai, UAE">
+                  Explore Details &rarr;
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Destination Card 3: Maldives -->
+          <article class="destination-card">
+            <div class="card-img-wrapper">
+              <img src="assets/images/destinations/maldives.jpg" alt="Maldives turquoise lagoon and overwater bungalows" loading="lazy">
+              <span class="card-badge">⭐ 5.0 (950)</span>
+            </div>
+            <div class="card-body">
+              <span class="card-location">Indian Ocean</span>
+              <h3 class="card-title">Maldives</h3>
+              <p class="card-desc">
+                Relax in crystal clear turquoise waters, pristine overwater villas, and vibrant coral reef sanctuaries.
+              </p>
+              <div class="card-footer">
+                <button class="btn-card open-booking" data-destination="Maldives">
+                  Explore Details &rarr;
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Destination Card 4: Switzerland -->
+          <article class="destination-card">
+            <div class="card-img-wrapper">
+              <img src="assets/images/destinations/switzerland.jpg" alt="Swiss Alps scenic lake and mountain village" loading="lazy">
+              <span class="card-badge">⭐ 4.9 (1.8k)</span>
+            </div>
+            <div class="card-body">
+              <span class="card-location">Europe</span>
+              <h3 class="card-title">Switzerland</h3>
+              <p class="card-desc">
+                Discover majestic snowcapped Alpine peaks, mirror-like glacial lakes, and scenic mountain railways.
+              </p>
+              <div class="card-footer">
+                <button class="btn-card open-booking" data-destination="Switzerland">
+                  Explore Details &rarr;
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 04: TRAVEL PACKAGES (3 CARDS)
+         ========================================================================= -->
+    <section class="packages-section section-padding" id="packages">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Curated Itineraries</span>
+          <h2 class="section-title">Featured Travel Packages</h2>
+          <p class="section-subtitle">
+            All-inclusive, expertly planned vacation packages with luxury accommodations, guided tours, and flexible booking.
+          </p>
+        </div>
+
+        <div class="packages-grid">
+          <!-- Package Card 1: Bali Explorer -->
+          <article class="package-card">
+            <div class="package-img-wrap">
+              <img src="assets/images/packages/package-1.jpg" alt="Tropical Bali Explorer Vacation" loading="lazy">
+              <span class="package-duration">6 Days / 5 Nights</span>
+            </div>
+            <div class="package-body">
+              <h3 class="package-title">Tropical Bali Explorer</h3>
+              <p class="package-desc">
+                Complete cultural and wellness escape with private villa stays, temple tours, and beach excursions.
+              </p>
+              <div class="package-features">
+                <div class="feature-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>5-Star Luxury Resort Stay</span>
+                </div>
+                <div class="feature-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Daily Gourmet Breakfast & Airport Transfer</span>
+                </div>
+                <div class="feature-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Private Guided Waterfall & Temple Tour</span>
+                </div>
+              </div>
+              <div class="package-footer">
+                <div class="price-box">
+                  <span class="from">Starting from</span>
+                  <span class="amount">$799</span>
+                </div>
+                <button class="btn btn-primary open-booking" data-destination="Tropical Bali Explorer ($799)">
+                  Book Package
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Package Card 2: Dubai Extravaganza (Featured) -->
+          <article class="package-card featured">
+            <span class="featured-ribbon">Most Popular</span>
+            <div class="package-img-wrap">
+              <img src="assets/images/packages/package-2.jpg" alt="Dubai Luxury Extravaganza" loading="lazy">
+              <span class="package-duration">5 Days / 4 Nights</span>
+            </div>
+            <div class="package-body">
+              <h3 class="package-title">Dubai Extravaganza</h3>
+              <p class="package-desc">
+                High-end modern city experience combined with thrilling desert dune bashing and sunset dinner cruise.
+              </p>
+              <div class="package-features">
+                <div class="feature-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Luxury Marina Hotel with Skyline Views</span>
+                </div>
+                <div class="feature-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>4x4 VIP Desert Safari & BBQ Dinner</span>
+                </div>
+                <div class="feature-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Burj Khalifa Top Level Fast-Track Access</span>
+                </div>
+              </div>
+              <div class="package-footer">
+                <div class="price-box">
+                  <span class="from">Starting from</span>
+                  <span class="amount">$1,099</span>
+                </div>
+                <button class="btn btn-accent open-booking" data-destination="Dubai Extravaganza ($1,099)">
+                  Book Package
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Package Card 3: Swiss Alps Escape -->
+          <article class="package-card">
+            <div class="package-img-wrap">
+              <img src="assets/images/packages/package-3.jpg" alt="Swiss Alps Mountain Escape" loading="lazy">
+              <span class="package-duration">7 Days / 6 Nights</span>
+            </div>
+            <div class="package-body">
+              <h3 class="package-title">Swiss Alps Escape</h3>
+              <p class="package-desc">
+                Breathtaking journey across Switzerland’s iconic alpine passes, glacial lakes, and cozy chalets.
+              </p>
+              <div class="package-features">
+                <div class="feature-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Swiss Travel Pass (Unlimited Trains & Boats)</span>
+                </div>
+                <div class="feature-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Alpine Chalet Accommodations in Interlaken</span>
+                </div>
+                <div class="feature-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Jungfraujoch 'Top of Europe' Excursion</span>
+                </div>
+              </div>
+              <div class="package-footer">
+                <div class="price-box">
+                  <span class="from">Starting from</span>
+                  <span class="amount">$1,499</span>
+                </div>
+                <button class="btn btn-primary open-booking" data-destination="Swiss Alps Escape ($1,499)">
+                  Book Package
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 05: WHY CHOOSE US (3 BENEFITS)
+         ========================================================================= -->
+    <section class="features-section section-padding" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">The Wanderly Advantage</span>
+          <h2 class="section-title">Why Choose Us</h2>
+          <p class="section-subtitle">
+            We simplify travel planning so you can focus entirely on creating unforgettable lifelong memories.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Feature 1: Best Travel Deals -->
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+              </svg>
+            </div>
+            <h3 class="feature-card-title">Best Travel Deals</h3>
+            <p class="feature-card-desc">
+              Guaranteed competitive pricing with direct airline and resort partnerships. Transparent quotes with zero hidden markups.
+            </p>
+          </div>
+
+          <!-- Feature 2: Handpicked Destinations -->
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <h3 class="feature-card-title">Handpicked Destinations</h3>
+            <p class="feature-card-desc">
+              Every resort, private guide, and itinerary is personally evaluated and vetted by our destination specialists for quality.
+            </p>
+          </div>
+
+          <!-- Feature 3: 24/7 Dedicated Support -->
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <h3 class="feature-card-title">24/7 Dedicated Support</h3>
+            <p class="feature-card-desc">
+              From before departure until you safely return home, our concierge travel advisors are on standby round-the-clock.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 06: FINAL CALL TO ACTION (CTA BANNER)
+         ========================================================================= -->
+    <section class="cta-section" id="plan-trip">
+      <div class="container">
+        <div class="cta-banner">
+          <div class="cta-content">
+            <h2 class="cta-title">Ready for Your Next Adventure?</h2>
+            <p class="cta-desc">
+              Connect with our destination specialists today to craft a customized itinerary tailored specifically to your preferences and schedule.
+            </p>
+            <button class="btn btn-accent btn-lg open-booking" data-destination="General Travel Inquiry">
+              Plan Your Trip
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       SECTION 07: FOOTER
+       ========================================================================= -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand Info -->
+        <div class="footer-brand">
+          <a href="#home" class="footer-logo">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+            </svg>
+            <span>Wanderly</span>
+          </a>
+          <p class="footer-about">
+            Your premier travel and tourism partner. We deliver unforgettable holiday packages and seamless worldwide journeys.
+          </p>
+          <div class="social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.08c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.41z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-nav">
+          <h4 class="footer-heading">Quick Links</h4>
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#packages">Travel Packages</a>
+            <a href="#about">Why Choose Us</a>
+            <a href="#plan-trip">Plan Your Trip</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Popular Places -->
+        <div class="footer-destinations">
+          <h4 class="footer-heading">Top Destinations</h4>
+          <div class="footer-links">
+            <a href="#destinations">Bali, Indonesia</a>
+            <a href="#destinations">Dubai, UAE</a>
+            <a href="#destinations">Maldives Islands</a>
+            <a href="#destinations">Swiss Alps</a>
+            <a href="#destinations">Tokyo, Japan</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Contact Info -->
+        <div class="footer-contact">
+          <h4 class="footer-heading">Get in Touch</h4>
+          <div class="footer-contact-list">
+            <div class="contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>support@wanderly.com</span>
+            </div>
+            <div class="contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>+1 (800) 555-0199</span>
+            </div>
+            <div class="contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>123 Wanderlust Way, Suite 400</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 Wanderly Travel Ltd. All rights reserved. Created for Teknoppy Technical Evaluation.</p>
+        <p>Designed with Clean HTML5, Vanilla CSS3 &amp; ES6+ JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       INTERACTIVE MODAL: PLAN YOUR TRIP
+       ========================================================================= -->
+  <div class="modal-overlay" id="bookingModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalTitle">Plan Your Dream Trip</h3>
+        <p class="modal-subtitle">Share your travel preferences and our destination specialists will curate a personalized quote.</p>
+      </div>
+
+      <form class="booking-form" id="bookingForm">
+        <div class="form-group">
+          <label for="travelDestination" class="form-label">Selected Destination / Package</label>
+          <select id="travelDestination" class="form-control" required>
+            <option value="">Select a Destination or Package</option>
+            <option value="Bali, Indonesia">Bali, Indonesia</option>
+            <option value="Dubai, UAE">Dubai, UAE</option>
+            <option value="Maldives">Maldives</option>
+            <option value="Switzerland">Switzerland</option>
+            <option value="Tropical Bali Explorer ($799)">Tropical Bali Explorer ($799)</option>
+            <option value="Dubai Extravaganza ($1,099)">Dubai Extravaganza ($1,099)</option>
+            <option value="Swiss Alps Escape ($1,499)">Swiss Alps Escape ($1,499)</option>
+            <option value="Custom Itinerary">Custom Itinerary (Other)</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="userName" class="form-label">Full Name</label>
+            <input type="text" id="userName" class="form-control" placeholder="Jane Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="userEmail" class="form-label">Email Address</label>
+            <input type="email" id="userEmail" class="form-control" placeholder="jane@example.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="travelDate" class="form-label">Target Travel Month / Date</label>
+            <input type="date" id="travelDate" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="guestCount" class="form-label">Travelers</label>
+            <select id="guestCount" class="form-control">
+              <option value="1">1 Solo Traveler</option>
+              <option value="2" selected>2 Travelers (Couple / Friends)</option>
+              <option value="3-4">3 - 4 Travelers (Family / Group)</option>
+              <option value="5+">5+ Travelers (Large Group)</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-accent btn-lg btn-block" style="margin-top: 0.5rem;">
+          Request Free Custom Quote
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toastNotification" role="alert" aria-live="polite">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+    </svg>
+    <div>
+      <strong>Inquiry Submitted!</strong>
+      <p style="font-size: 0.85rem; opacity: 0.9;">Our travel advisor will contact you within 24 hours.</p>
+    </div>
+  </div>
+
+  <!-- Core JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
