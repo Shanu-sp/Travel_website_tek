@@ -362,11 +362,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const showModal = () => {
     if (!bookingModal) return;
     
-    // Prevent layout shift from scrollbar disappearing
-    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-    if (scrollbarWidth > 0) {
-      document.body.style.paddingRight = `${scrollbarWidth}px`;
-      if (header) header.style.paddingRight = `${scrollbarWidth}px`;
+    // Prevent layout shift from scrollbar disappearing (desktop only)
+    if (window.innerWidth > 768) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      if (scrollbarWidth > 0) {
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+        if (header) header.style.paddingRight = `${scrollbarWidth}px`;
+      }
     }
     
     document.body.classList.add('modal-open');
