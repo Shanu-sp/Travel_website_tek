@@ -935,6 +935,15 @@ ul, ol {
   color: var(--color-accent);
 }
 
+.footer-tagline {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--color-accent);
+  font-weight: var(--font-weight-medium);
+  margin-top: -0.35rem;
+  letter-spacing: 0.02em;
+}
+
 .footer-about {
   font-size: 0.925rem;
   color: #94a3b8;
