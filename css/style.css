@@ -280,16 +280,38 @@ ul, ol {
 .brand-logo {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  font-size: 1.45rem;
+  gap: 0.65rem;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 1.4rem;
   font-weight: var(--font-weight-extrabold);
   color: var(--color-primary);
   letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.brand-tagline {
+  font-size: 0.68rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-top: 2px;
 }
 
 .brand-logo svg {
   color: var(--color-accent);
   transition: transform var(--transition-normal);
+  flex-shrink: 0;
 }
 
 .brand-logo:hover svg {
@@ -420,13 +442,22 @@ ul, ol {
   font-size: clamp(2.5rem, 5.5vw, 4.2rem);
   font-weight: var(--font-weight-extrabold);
   line-height: 1.15;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
   letter-spacing: -0.03em;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
 }
 
+.hero-caption {
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  font-weight: var(--font-weight-bold);
+  color: #ff9e88;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.25rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
 .hero-subtitle {
-  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
   line-height: 1.6;
   opacity: 0.92;
   margin-bottom: 2.25rem;
@@ -1513,6 +1544,14 @@ body.modal-open {
 
 /* Small Phones (Max 480px) */
 @media (max-width: 480px) {
+  .brand-name {
+    font-size: 1.25rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.62rem;
+  }
+
   .destinations-grid {
     grid-template-columns: 1fr;
   }
